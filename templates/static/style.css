@@ -1,0 +1,131 @@
+body {
+    background-color: rgb(203, 216, 226);
+    background-color: url(barbershop-1.jpg);
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    text-align: left;
+}
+
+.vis {
+    display: flex;
+    justify-content: start;
+}
+
+.item_1 {
+    flex-basis: 80%;
+}
+.vis > div {
+    padding: 20px;
+    padding-right: 5px;
+    /* border-right: 2px solid gray; */
+    margin: 2px;
+    font-size: x-large;
+}
+.box_visual {
+    width: 70%;
+    display: inline-flex;
+}
+.item_2 {
+    width: 230px;
+}
+
+#hairdressers {
+    padding: 15px;
+    border: 3px;
+    border-radius: 10px;
+    display: none;
+    margin: auto;
+}
+#hairdressers:target {display: block;}
+
+#specialists {
+    padding: 15px;
+    border: 3px;
+    border-radius: 10px;
+    display: none;
+    margin: auto;
+}
+#specialists:target {display: block;}
+
+#services {
+    padding: 15px;
+    border: 3px;
+    border-radius: 10px;
+    display: none;
+    margin: auto;
+}
+#services:target {display: block;}
+
+.close {
+    display: inline-block;
+    /* padding: 0 12px; */
+    margin: 10px;
+    text-decoration: none;
+    background: #f2f2f2;
+    font-size: 14pt;
+    cursor:pointer;
+}
+.close:hover {background: #383855;}
+
+#calendar {
+    padding: 15px;
+    border: 3px;
+    border-radius: 10px;
+    display: none;
+    margin: auto;
+}
+#calendar:target {display: block;}
+
+/* .back_image {
+    background-image: url(barbershop-1.jpg);
+    height: 650px;
+    ;
+} */
+
+.container > div {
+    padding: 20px;
+    background-color: rgb(163, 168, 172);
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin: 2px;
+    font-size: x-large;
+    width: 100%;
+}
+
+.person {
+    display: flex;
+    justify-content: start;
+}
+.person > div {
+    display: inline-block;
+    border: #383855;
+    margin: 2px;
+    line-height: 55px;
+    font-size: x-large;
+    touch-action: manipulation;
+    cursor: pointer;
+    -ms-touch-action: manipulation;
+}
+
+.img_person {
+    height: 60px;
+    width: 60px;
+}
+.botton {
+    background-color: rgb(144, 151, 149);
+    color:beige;
+    padding: 2px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 960px) {
+    .vis {
+        flex-direction: column;
+    }
+}
