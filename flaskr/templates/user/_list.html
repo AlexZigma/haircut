@@ -1,0 +1,18 @@
+<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+  <div class="list-group gap-3">
+
+		{%for shop in shops%}
+    <a href="{{url_for('user.shop', id=shop['id'])}}" class="list-group-item d-flex gap-3 py-3 rounded-3" aria-current="true">
+      <img src="{{shop['icon']}}" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          <h6 class="mb-0">{{shop['shopname']}}</h6>
+          <p class="mb-0 opacity-75">{{shop['location']}}</p>
+        </div>
+        <small class="opacity-50 text-nowrap">now</small>
+      </div>
+    </a>
+		{%endfor%}
+
+  </div>
+</div>

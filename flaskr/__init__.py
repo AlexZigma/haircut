@@ -25,9 +25,9 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route('/')
-    def index():
-        return render_template('index.html')
+    # @app.route('/c')
+    # def index():
+    #     return render_template('company/home.html')
     
     from . import db
     db.init_app(app)
@@ -37,7 +37,11 @@ def create_app(test_config=None):
 
     from . import user
     app.register_blueprint(user.bp)
-    app.add_url_rule('/', endpoint='profile')
+    app.add_url_rule('/', endpoint='index')
+    
+    # from . import company
+    # app.register_blueprint(company.bp)
+    # app.add_url_rule('/', endpoint='c')
 
     # from . import blog
     # app.register_blueprint(blog.bp)

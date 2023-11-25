@@ -1,11 +1,35 @@
 {% block header %}
-<header class="text-center d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-auto border-bottom">
-    <div class="col-md-3 mb-2 mb-md-0">
+<header class="text-center d-flex flex-wrap align-items-center justify-content-center justify-content-between py-3 border-bottom">
+    <div class="col-md-3">
         <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
         <img src="{{url_for('static', filename='opened-scissors.png')}}" alt="" width="40px">
         <span class="fs-4 my-auto">Yourcut</span>
         </a>
     </div>
+
+		<div class="col-md-3 text-end order-md-2">
+			{%if not g.user%}
+				<a href="{{url_for('auth.login')}}" type="button" class="btn btn-outline-primary me-2">Login</a>
+				<a href="{{url_for('auth.register')}}" type="button" class="btn btn-primary">Sign-up</a>
+			{%else%}
+				<div class="dropdown">
+					<a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
+					data-bs-toggle="dropdown" aria-expanded="false">
+						<strong>{{g.user['username']}}</strong>
+						<img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle mx-2">
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+						<!-- <li><a class="dropdown-item" href="#">New project...</a></li> -->
+						<!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
+						<li><a class="dropdown-item" href="#">Profile</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="{{url_for('auth.logout')}}">Sign out</a></li>
+					</ul>
+				</div>
+			{%endif%}
+		</div>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
@@ -15,9 +39,5 @@
         <li><a href="#" class="nav-link px-2">About</a></li>
     </ul>
 
-    <div class="col-md-3 text-end">
-        <a href="{{url_for('auth.login')}}" type="button" class="btn btn-outline-primary me-2">Login</a>
-        <a href="{{url_for('auth.register')}}" type="button" class="btn btn-primary">Sign-up</a>
-    </div>
 </header>
 {% endblock %}

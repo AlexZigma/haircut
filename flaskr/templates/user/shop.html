@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block header %}
+  {% include "_header.html" %}
+{% endblock %}
+
+{% block main %}
+  <main>
+		<!-- {{shop['id']}} -->
+        <h1 class="fw-bold display-3">{{shop['shopname']}}</h1>
+        <div>
+            <img class="img-fluid rounded-3" src="https://image2.yell.ru/imager/NDk0OTc3Y2Y1NjU2ZTA3NmU2Y/1440x600/responses/3/6/4/r_2252445_25406_kvkufbenya0p4h78_1700803841.jpg" alt="">
+        </div>
+		<div><b>Адрес:</b> {{shop['location']}}</div>
+        <div><b>Контакты:</b> 
+            +7 966 032-40-64, Вконтакте, Телеграмм
+        </div>
+        <div class="m-auto">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
+                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
+                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
+                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
+                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
+              </ul>
+        </div>
+		<!-- {%for p in pricelist%}
+		{{p['title']}} {{p['price']}}
+		{%endfor%} -->
+  </main>
+
+{% endblock %}
+
+{%block footer%}
+  {%include "_footer.html"%}
+{%endblock%}

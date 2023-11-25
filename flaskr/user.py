@@ -10,42 +10,31 @@ from flaskr.db import get_db
 
 bp = Blueprint('user', __name__)
 
-active = 0
-
-@bp.route('/home')
-@login_required
-def home():
-    active = 0
-    return render_template('user/home.html', active=active)
-
-@bp.route('/profile')
-@login_required
-def profile():
-    active = 1
-    return render_template('user/profile.html', active=active)
-
-@bp.route('/workers')
-@login_required
-def workers():
-    active = 2
-    return render_template('user/workers.html', active=active)
-
-@bp.route('/service')
-@login_required
-def service():
-    active = 3
-    return render_template('user/service.html', active=active)
-
-@bp.route('/stats')
-@login_required
-def stats():
-    active = 4
-    return render_template('user/stats.html', active=active)
 
 
 
-# @bp.route('/<int:id>')
+@bp.route('/')
 # @login_required
-# def user_page(id):
-#     return str(id)
-#     return render_template('user.html', id=id)
+def home():
+    db = get_db()
+    shops = db.execute('SELECT * FROM shop')
+    return render_template('user/index.html', shops=shops)
+
+def get_shop(id):
+    db = get_db()
+    shop = db.execute('SELECT * FROM shop WHERE shop.id = ?', (id, )).fetchone()
+    return shop
+
+def get_pricelist(id):
+    db = get_db()
+    pricelist = db.execute('SELECT * FROM pricelist' 
+                           ' WHERE shop_id = ?', (id,)).fetchall()
+    return pricelist
+
+@bp.route('/<int:id>/shop')
+# @login_required
+def shop(id):
+    shop = get_shop(id)
+    pricelist = get_pricelist(id)
+    # print(shop)
+    return render_template('user/shop.html', shop=shop, pricelist=pricelist)
