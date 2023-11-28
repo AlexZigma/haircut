@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block header %}
+  {% include "_header.html" %}
+{% endblock %}
+
+{% block main %}
+  <main>
+    {%include 'admin/_list.html'%}
+  </main>
+{% endblock %}
+
+{%block footer%}
+  {%include "_footer.html"%}
+{%endblock%}

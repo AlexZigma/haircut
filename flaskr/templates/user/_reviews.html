@@ -1,0 +1,73 @@
+<div class="list-group">
+    <span class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="{{url_for('static', filename='person-fill.svg')}}" alt="twbs" width="32" height="32"
+            class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+                <h6 class="mb-0">Вениамин</h6>
+                <p class="mb-0 opacity-75">Класс</p>
+            </div>
+            <small class="opacity-50 text-nowrap">1д</small>
+        </div>
+    </span>
+    <span class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="{{url_for('static', filename='person-fill.svg')}}" alt="twbs" width="32" height="32"
+            class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+                <h6 class="mb-0">Константин</h6>
+                <p class="mb-0 opacity-75">Круто</p>
+            </div>
+            <small class="opacity-50 text-nowrap">3д</small>
+        </div>
+    </span>
+    <span class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="{{url_for('static', filename='person-fill.svg')}}" alt="twbs" width="32" height="32"
+            class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+                <h6 class="mb-0">Елена</h6>
+                <p class="mb-0 opacity-75">Мне очень понравилось данное заведение</p>
+            </div>
+            <small class="opacity-50 text-nowrap">1н</small>
+        </div>
+    </span>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Написать отзыв
+</button>
+
+<!-- Modal -->
+<div class="modal fade my-auto h-100" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Отзыв</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-star-fill rating-color display-3"></i>
+                            <i class="bi bi-star-fill rating-color display-3"></i>
+                            <i class="bi bi-star-fill rating-color display-3"></i>
+                            <i class="bi bi-star-fill rating-color display-3"></i>
+                            <i class="bi bi-star-fill display-3"></i>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="w-100" name="review-text" id="review-text" cols="30" rows="5"
+                            placeholder="Напишите отзыв"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary">Отправить отзыв</button>
+            </div>
+        </div>
+    </div>
+</div>

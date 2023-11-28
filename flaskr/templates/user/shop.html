@@ -14,14 +14,18 @@
         <div><b>Контакты:</b> 
             +7 966 032-40-64, Вконтакте, Телеграмм
         </div>
-        <div class="m-auto">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
-                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
-                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
-                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
-                <li class="list-group-item position-relative"><span>Cras justo odio</span><span class="position-absolute end-0">1500</span></li>
-              </ul>
+        <button type="submit" class="btn btn-primary w-100">Записаться</button>
+        <div class="mt-5">
+            <h2>Цены</h2>
+            {%include 'user/_price.html'%}
+        </div>
+        <div class="mt-5">
+            <h2>Парикмахеры</h2>
+            {%include 'user/_team.html'%}
+        </div>
+        <div class="mt-5">
+            <h2>Отзывы</h2>
+            {%include 'user/_reviews.html'%}
         </div>
 		<!-- {%for p in pricelist%}
 		{{p['title']}} {{p['price']}}

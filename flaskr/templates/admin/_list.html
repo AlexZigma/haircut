@@ -2,7 +2,7 @@
     <div class="list-group gap-3">
 
         {%for shop in shops%}
-        <a href="{{url_for('user.shop', id=shop['id'])}}" class="list-group-item d-flex gap-3 py-3 rounded-3"
+        <a href="{{url_for('admin.update', id=shop['id'])}}" class="list-group-item d-flex gap-3 py-3 rounded-3"
             aria-current="true">
             <img src="{{shop['icon']}}" alt="" width="32" height="32" class="rounded-circle flex-shrink-0">
             <div class="d-flex w-100 flex-column">
@@ -24,9 +24,9 @@
                         <small>Мужская стрижка</small>
                         <small>400-1500</small>
                     </div>
-                    <div class="d-flex w-100 justify-content-between">
+                    <div>
                         <small>Женская стрижка</small>
-                        <small>1000-3750</small>
+                        <small>1000-3500</small>
                     </div>
                 </div>
             </div>

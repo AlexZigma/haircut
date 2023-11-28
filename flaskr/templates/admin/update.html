@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ shop['shopname'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block main %}
+  <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title"
+      value="{{ request.form['shopname'] or shop['shopname'] }}" required>
+    <label for="body">Body</label>
+    <!-- <textarea name="body" id="body">{{ request.form['body'] or shop['body'] }}</textarea> -->
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('admin.delete', id=shop['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}
